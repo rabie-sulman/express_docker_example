@@ -1,0 +1,15 @@
+version: "3"
+services:
+  node:
+    image: node:carbon
+    env_file:
+      - .env
+    labels:
+      - $APP_LABEL
+    user: node
+    working_dir: $APP_HOME
+    volumes:
+      - ./:/home/node/app
+    ports:
+      - "8080:8080"
+    command: "npm start"
