@@ -1,15 +1,15 @@
 version: "3"
 services:
   node:
-    image: node:carbon
+    build:
+      context: .
+      args:
+        APP_HOME: ${APP_HOME}
     env_file:
       - .env
-    labels:
-      - $APP_LABEL
     user: node
     working_dir: $APP_HOME
     volumes:
-      - ./:/home/node/app
+      - ./:$APP_HOME
     ports:
       - "8080:8080"
-    command: "npm start"

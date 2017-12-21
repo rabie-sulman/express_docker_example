@@ -4,12 +4,18 @@
       > cp .env.dist .env
     ```
 
-- to start, using Makefile command, run:
+- to start, docker will build from local Dockerfile which will install dependencies in node_modules on build time:
     ```bash
-      > make start
+      > docker-compose up --build -d
+    ```
+    Or if the container is already built, 
+    ```bash
+      > docker-compose up -d
+    ```
+- to stop:
+    ```bash
+      > docker-compose stop
     ```
 
-- to stop, using Makefile command, run:
-    ```bash
-      > make stop
-    ```
+## notes
+no tricks, really. pretty straightforward..
