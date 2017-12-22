@@ -18,4 +18,16 @@
     ```
 
 ## notes
-no tricks, really. pretty straightforward..
+- for development, `nodemon` is installed and is run on start script in `package.json`. In prod, 
+    ```bash
+    RUN npm install -g nodemon
+    ``` 
+   in the `Dockerfile` can be removed. Also,  the start script can be changed to: 
+   
+    ```json 
+    "scripts": {
+        "start": "nodemon -L server.js"
+      },
+    ```
+     
+otherwise, no tricks, really. pretty straightforward..
